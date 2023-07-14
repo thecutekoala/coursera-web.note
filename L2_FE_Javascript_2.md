@@ -1,5 +1,8 @@
 # Javascript
 
+[![hackmd-github-sync-badge](https://hackmd.io/u9r3UzBwRgisHYO_LGWIpw/badge)](https://hackmd.io/u9r3UzBwRgisHYO_LGWIpw)
+
+
 ## Week 3 Programming Paradigms 程式範例(續)
 
 ### 1. for of loop
@@ -198,14 +201,14 @@ console.log(arrayOfChars);
 ```javascript!
 const fruits1 = ['apples', 'pears']
 const fruits2 = [...fruits1]
-
+https://hackmd.io/u9r3UzBwRgisHYO_LGWIpw#
 console.log(fruits1, fruits2)
 // ['apples','pears'] ['apples','pears']
 ```
 
 ### 7. testing
 
-1. JEST
+1. Jest introduce
 
 在javascript中
 ```javascript!
@@ -222,3 +225,58 @@ concatStrings("123","456")
 ```javascript!
 expect(concatStrings("123","456")).tobe("123456");
 ```
+
+2. Refactoring 重構  
+在不影響結果的情況下，重新設計程式
+
+3. End-to-end(e2e) testing  
+透過使用者與介面互動，來測試整個預期的功能  
+特點：最耗時耗費資源  
+常用軟體：WebdriverJS, Protractor, Cypress
+
+4. integration testing 集成測試  
+測試各個部分如何協同工作  
+特點：較少的時間
+常用軟體:React testing library, Enzyme
+
+5. unit testing 單元測試  
+測試每個具備獨立功能的片段，例如function
+特點：最快且最容易編寫
+
+### 8. Jest 
+`npm install --save-dev jest`
+```javascript!
+{ //...
+    "script":{
+        "test": "jest";
+    },
+}
+```
+`npm run test`
+
+todo.test.js
+```javascript!
+test("return true if statusOfKeys exists", function({
+    expect(statusOfKeys).toboDefined()
+})
+
+function statusOfKeys(){}
+```
+
+1. code coverage  
+代碼覆蓋率，在測試上，覆蓋率越高可能抓到bug的機率越低
+
+2. mocking  
+在測試時將互相依賴的單元分開來，這有助於unit testing
+
+3. Snapshot testing  
+用來確認DOM操作沒有重新改變至原始的程式代碼
+
+4. TDD  
+test-driven development  
+測試驅動開發  
+
+傳統開發：取得需求->開發->測試  
+TDD：取得需求->撰寫failing test->開發通過測試->程式優化  
+
+原則：越少code越好
